@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.github.VladimirSergeevichFedorov"
-version = "1.0.2"
+version = "1.0.3"
 
 buildscript {
     repositories {
@@ -63,7 +63,16 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
             }
-            val androidMain by getting
+            val androidMain by getting {
+                dependencies {
+                    implementation("androidx.compose.ui:ui:1.4.3")
+                    implementation("androidx.compose.ui:ui-tooling:1.4.3")
+                    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
+                    implementation("androidx.compose.foundation:foundation:1.4.3")
+                    implementation("androidx.compose.material:material:1.4.3")
+                }
+
+            }
             val androidUnitTest by getting
             val iosX64Main by getting
             val iosArm64Main by getting
@@ -103,16 +112,21 @@ kotlin {
 
 android {
     namespace = "com.example.newtrykmmlibrary"
-//    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     compileSdk = 33
     defaultConfig {
         minSdk = 24
     }
-
-//    publishing {
-//        singleVariant("release") {
-//            withSourcesJar()
-//            withJavadocJar()
-//        }
-//    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.7"
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }

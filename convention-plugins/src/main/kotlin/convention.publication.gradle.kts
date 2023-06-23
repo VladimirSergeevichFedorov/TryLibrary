@@ -39,13 +39,33 @@ val javadocJar by tasks.registering(Jar::class) {
 }
 
 fun getExtraString(name: String) = ext[name]?.toString()
+val ossrhRepositoryUrl = if (version.toString().endsWith("SNAPSHOT")) {
+    "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+} else {
+    "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+}
 
+//publishing {
+//    repositories {
+//        maven(ossrhRepositoryUrl) {
+//            name = "ossrh"
+//            credentials(PasswordCredentials::class)
+//        }
+//    }
+//}
 publishing {
     // Configure maven central repository
     repositories {
-        maven {
-            name = "sonatype"
-            setUrl("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+        maven(ossrhRepositoryUrl) {
+            name = "OSSRH"
+//            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+//            metadataSources {
+//                mavenPom()
+//                artifact()
+//            }
+            metadataSources {
+                gradleMetadata()
+            }
             credentials {
                 username = getExtraString("ossrhUsername")
                 password = getExtraString("ossrhPassword")
@@ -55,10 +75,12 @@ publishing {
 
     // Configure all publications
     publications.withType<MavenPublication> {
-
+        group = "io.github.VladimirSergeevichFedorov"
+        version = "1.0.3"
+        artifactId = "TryLibrary"
         // Stub javadoc.jar artifact
         artifact(javadocJar.get())
-        artifactId = "TryLibrary"
+
         // Provide artifacts information requited by Maven Central
         pom {
             name.set("liba test neo")
@@ -67,8 +89,8 @@ publishing {
 
             licenses {
                 license {
-                    name.set("MIT")
-                    url.set("https://opensource.org/licenses/MIT")
+                    name.set("The Apache License, Version 2.0")
+                    url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
                 }
             }
             developers {
@@ -79,8 +101,11 @@ publishing {
                 }
             }
 scm {
-    connection.set("https://github.com/VladimirSergeevichFedorov/TryLibrary.git")
-    url.set("https://github.com/VladimirSergeevichFedorov/TryLibrary")
+//    connection.set("https://github.com/VladimirSergeevichFedorov/TryLibrary.git")
+//    url.set("https://github.com/VladimirSergeevichFedorov/TryLibrary")
+    connection.set("scm:git:git://github.com/VladimirSergeevichFedorov/TryLibrary.git")
+    developerConnection.set("scm:git:ssh://github.com/VladimirSergeevichFedorov/TryLibrary.git")
+    url.set("http://github.com/VladimirSergeevichFedorov/TryLibrary")
 }
 
         }
@@ -88,7 +113,18 @@ scm {
 }
 
 // Signing artifacts. Signing.* extra properties values will be used
+val signingTasks = tasks.withType<Sign>()
+tasks.withType<AbstractPublishToMaven>().configureEach {
+    dependsOn(signingTasks)
+}
+
 
 signing {
+    useGpgCmd()
     sign(publishing.publications)
+}
+tasks.withType<GenerateModuleMetadata> {
+    // The value 'enforced-platform' is provided in the validation
+    // error message you got
+    suppressedValidationErrors.add("enforced-platform")
 }
