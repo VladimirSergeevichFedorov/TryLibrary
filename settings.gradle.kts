@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "NewTryKMMLibrary"
+rootProject.name = "TryLibrary"
 include(":shared")
 includeBuild("convention-plugins")
