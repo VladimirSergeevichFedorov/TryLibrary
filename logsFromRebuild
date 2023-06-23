@@ -1,0 +1,121 @@
+> Task :convention-plugins:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :convention-plugins:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :convention-plugins:compilePluginsBlocks UP-TO-DATE
+> Task :convention-plugins:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :convention-plugins:generateScriptPluginAdapters UP-TO-DATE
+> Task :convention-plugins:compileKotlin UP-TO-DATE
+> Task :convention-plugins:compileJava NO-SOURCE
+> Task :convention-plugins:pluginDescriptors UP-TO-DATE
+> Task :convention-plugins:processResources UP-TO-DATE
+> Task :convention-plugins:classes UP-TO-DATE
+> Task :convention-plugins:jar UP-TO-DATE
+> Task :convention-plugins:inspectClassesForKotlinIC UP-TO-DATE
+> Task :convention-plugins:assemble UP-TO-DATE
+> Task :shared:cleanIosSimulatorArm64Test UP-TO-DATE
+> Task :shared:cleanIosX64Test UP-TO-DATE
+> Task :shared:cleanAllTests UP-TO-DATE
+> Task :shared:clean UP-TO-DATE
+> Task :shared:transformCommonMainDependenciesMetadata
+> Task :convention-plugins:clean
+> Task :shared:generateProjectStructureMetadata
+> Task :shared:metadataCommonMainProcessResources NO-SOURCE
+> Task :shared:preBuild UP-TO-DATE
+> Task :shared:preDebugBuild UP-TO-DATE
+> Task :shared:mergeDebugJniLibFolders
+> Task :shared:mergeDebugNativeLibs NO-SOURCE
+> Task :shared:stripDebugDebugSymbols NO-SOURCE
+> Task :shared:generateDebugResValues
+> Task :shared:generateDebugResources
+> Task :shared:copyDebugJniLibsProjectAndLocalJars
+> Task :shared:packageDebugResources
+> Task :shared:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :shared:javaPreCompileDebug
+> Task :shared:mergeDebugShaders
+> Task :shared:compileDebugShaders NO-SOURCE
+> Task :shared:generateDebugAssets UP-TO-DATE
+> Task :shared:packageDebugAssets
+> Task :shared:prepareDebugArtProfile UP-TO-DATE
+> Task :shared:prepareLintJarForPublish UP-TO-DATE
+> Task :shared:processDebugJavaRes NO-SOURCE
+> Task :shared:compileCommonMainKotlinMetadata
+> Task :shared:writeDebugAarMetadata
+> Task :shared:createDebugVariantModel
+> Task :shared:metadataCommonMainClasses
+> Task :shared:parseDebugLocalResources
+> Task :shared:allMetadataJar
+> Task :shared:preReleaseBuild UP-TO-DATE
+> Task :shared:mergeReleaseJniLibFolders
+> Task :shared:mergeReleaseNativeLibs NO-SOURCE
+> Task :shared:stripReleaseDebugSymbols NO-SOURCE
+> Task :shared:copyReleaseJniLibsProjectAndLocalJars
+> Task :shared:generateReleaseResValues
+> Task :shared:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :shared:generateReleaseResources
+> Task :shared:packageReleaseResources
+> Task :shared:processDebugManifest
+> Task :shared:parseReleaseLocalResources
+> Task :shared:mergeReleaseShaders
+> Task :shared:javaPreCompileRelease
+> Task :shared:processReleaseManifest
+> Task :shared:compileReleaseShaders NO-SOURCE
+> Task :shared:generateReleaseAssets UP-TO-DATE
+> Task :shared:packageReleaseAssets
+> Task :shared:prepareReleaseArtProfile UP-TO-DATE
+> Task :shared:processReleaseJavaRes NO-SOURCE
+> Task :shared:writeReleaseAarMetadata
+> Task :shared:createReleaseVariantModel
+> Task :shared:mapReleaseSourceSetPaths
+> Task :shared:mergeReleaseResources
+> Task :shared:generateDebugRFile
+> Task :shared:generateReleaseRFile
+> Task :shared:verifyReleaseResources
+> Task :shared:compileDebugKotlinAndroid
+> Task :shared:compileReleaseKotlinAndroid
+> Task :shared:compileKotlinIosArm64
+> Task :shared:extractDebugAnnotations
+> Task :shared:compileDebugJavaWithJavac NO-SOURCE
+> Task :shared:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :shared:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :shared:extractReleaseAnnotations
+> Task :shared:compileReleaseJavaWithJavac NO-SOURCE
+> Task :shared:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :shared:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :shared:mergeReleaseJavaResource
+> Task :shared:mergeDebugJavaResource
+> Task :shared:compileKotlinIosSimulatorArm64
+> Task :shared:syncDebugLibJars
+> Task :shared:bundleDebugAar
+> Task :shared:assembleDebug
+> Task :shared:syncReleaseLibJars
+> Task :shared:bundleReleaseAar
+> Task :shared:assembleRelease
+> Task
+:shared:compileKotlinIosX64
+> Task :commonizeNativeDistribution UP-TO-DATE
+> Task :shared:transformNativeMainCInteropDependenciesMetadata UP-TO-DATE
+> Task :shared:transformNativeMainDependenciesMetadata
+> Task :shared:compileNativeMainKotlinMetadata NO-SOURCE
+> Task :shared:metadataNativeMainProcessResources NO-SOURCE
+> Task :shared:metadataNativeMainClasses UP-TO-DATE
+> Task :shared:transformAppleMainCInteropDependenciesMetadata UP-TO-DATE
+> Task :shared:transformAppleMainDependenciesMetadata
+> Task :shared:compileAppleMainKotlinMetadata NO-SOURCE
+> Task :shared:metadataAppleMainProcessResources NO-SOURCE
+> Task :shared:metadataAppleMainClasses UP-TO-DATE
+> Task :shared:transformIosMainCInteropDependenciesMetadata UP-TO-DATE
+> Task :shared:transformIosMainDependenciesMetadata
+> Task :shared:compileIosMainKotlinMetadata
+> Task :shared:metadataIosMainProcessResources NO-SOURCE
+> Task :shared:metadataIosMainClasses
+> Task :shared:iosArm64MetadataJar
+> Task :shared:iosSimulatorArm64MetadataJar
+> Task :shared:iosX64MetadataJar
+> Task :shared:linkPodDebugFrameworkIosArm64
+> Task :shared:linkPodDebugFrameworkIosX64
+> Task :shared:linkPodDebugFrameworkIosFat
+> Task :shared:linkPodDebugFrameworkIosSimulatorArm64
+> Task :shared:linkPodReleaseFrameworkIosArm64
+> Task :shared:linkPodReleaseFrameworkIosX64
+> Task :shared:linkPodReleaseFrameworkIosFat
+> Task :shared:linkPodReleaseFrameworkIosSimulatorArm64
+> Task :shared:assemble
