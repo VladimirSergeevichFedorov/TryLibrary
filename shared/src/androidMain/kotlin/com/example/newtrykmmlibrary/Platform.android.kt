@@ -13,7 +13,7 @@ class AndroidPlatform : Platform {
     override val name: String = "Android Neoflex ${android.os.Build.VERSION.SDK_INT}"
 }
 
-class MainActivity : ComponentActivity() {
+class ToolanoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         setContent {
