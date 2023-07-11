@@ -1,4 +1,5 @@
 plugins {
+
     kotlin("multiplatform") version "1.8.21"
     kotlin("native.cocoapods")
     id("com.android.library")
@@ -15,8 +16,6 @@ buildscript {
     }
 }
 
-
-
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
     targetHierarchy.default()
@@ -30,15 +29,6 @@ kotlin {
         }
     }
 
-//    listOf(
-//        iosX64(),
-//        iosArm64(),
-//        iosSimulatorArm64()
-//    ).forEach {
-//        it.binaries.framework {
-//            baseName = "shared"
-//        }
-//    }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -65,6 +55,7 @@ kotlin {
             }
             val androidMain by getting {
                 dependencies {
+                    implementation("androidx.activity:activity-compose:1.7.2")
                     implementation("androidx.compose.ui:ui:1.4.3")
                     implementation("androidx.compose.ui:ui-tooling:1.4.3")
                     implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
@@ -78,34 +69,11 @@ kotlin {
             val iosArm64Main by getting
             val iosSimulatorArm64Main by getting
             val iosMain by getting
-//            {
-//                dependsOn(commonMain)
-//                iosX64Main.dependsOn(this)
-//                iosArm64Main.dependsOn(this)
-//                iosSimulatorArm64Main.dependsOn(this)
-//            }
+
             val iosX64Test by getting
             val iosArm64Test by getting
             val iosSimulatorArm64Test by getting
             val iosTest by getting
-//            {
-////                dependsOn(commonTest)
-//                iosX64Test.dependsOn(this)
-//                iosArm64Test.dependsOn(this)
-//                iosSimulatorArm64Test.dependsOn(this)
-//            }
-//        val commonMain by getting {
-//            dependencies {
-//                //put your multiplatform dependencies here
-//            }
-//        }
-//        val commonTest by getting {
-//            dependencies {
-//                implementation(kotlin("test"))
-//            }
-//        }
-//        val iosX64Main by getting
-//        val iosX64Test by getting
         }
     }
 }
