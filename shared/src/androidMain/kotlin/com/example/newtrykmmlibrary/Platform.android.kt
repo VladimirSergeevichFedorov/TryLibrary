@@ -35,7 +35,7 @@ fun IFromLib(){
         mutableStateOf(true)
 
     }
-    Text(modifier = Modifier.background(Color.Black),text = "Hi Tylano ${r.value}")
+    Text(modifier = Modifier.background(Color.Black),text = "Hi Tylano")
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()
