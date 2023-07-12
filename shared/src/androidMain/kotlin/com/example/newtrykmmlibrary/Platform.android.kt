@@ -23,7 +23,7 @@ class ToolanoActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column(modifier = Modifier.fillMaxSize().background(Color.Blue)) {
+            Column(modifier = Modifier.fillMaxSize()) {
                 IFromLib()
             }
 
@@ -36,7 +36,7 @@ fun IFromLib(){
         mutableStateOf(true)
 
     }
-    Text(modifier = Modifier.background(Color.Black),text = "Hi Tylano")
+    Text(text = "Hi Tylano")
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()

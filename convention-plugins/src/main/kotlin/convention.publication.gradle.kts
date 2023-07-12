@@ -66,7 +66,7 @@ publishing {
     // Configure all publications
     publications.withType<MavenPublication> {
         group = "io.github.VladimirSergeevichFedorov"
-        version = "1.0.6"
+        version = "1.0.7"
         artifactId = "TryLibrary"
         // Stub javadoc.jar artifact
         artifact(javadocJar.get())
