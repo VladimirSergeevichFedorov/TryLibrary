@@ -13,14 +13,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.fragment.app.FragmentActivity
 
 class AndroidPlatform : Platform {
     override val name: String = "Android Neoflex ${android.os.Build.VERSION.SDK_INT}"
 }
 
-class ToolanoActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+class ToolanoActivity : FragmentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContent {
             Column(modifier = Modifier.fillMaxSize().background(Color.Blue)) {
                 IFromLib()
