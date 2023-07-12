@@ -22,21 +22,18 @@ class AndroidPlatform : Platform {
 class ToolanoActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val fromProject = intent.getIntExtra("key",0)
         setContent {
             Column(modifier = Modifier.fillMaxSize()) {
-                IFromLib()
+                IFromLib(fromProject)
             }
 
         }
     }
 }
 @Composable
-fun IFromLib(){
-    val r = remember {
-        mutableStateOf(true)
-
-    }
-    Text(text = "Hi Tylano")
+fun IFromLib(getM:Int){
+    Text(text = "Hi Tylano $getM")
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()

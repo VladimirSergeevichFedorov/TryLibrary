@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.VladimirSergeevichFedorov"
-version = "1.0.7"
+version = "1.0.8"
 
 buildscript {
     repositories {
